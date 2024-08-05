@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="" method="post">
+        <!-- 
+            get: 주소표시줄 ? 뒤에 입력값이 노출
+            post: 외부 노출 x
+        -->
+        <fieldset>
+            <legend>필수입력</legend>
+            <div>
+                <label for="username">이름:</label>
+                <input type="text" name="username" minlength="2" maxlength="15" id="username" required placeholder="이름을 입력하세요" autofocus>
+            </div>
+            <div>
+                <label for="useremail">이메일:</label>
+                <input type="email" name="useremail" id="useremail" required>
+            </div>
+            <div>
+                <label for="userpw">비밀전호:</label>
+                <input type="password" name="userpw" id="userpw" pattern="[A-Za-z]{5}" required>
+            </div>
+            <!-- 주소지, 유입경로, 인사말, 관심사 -->
+        </fieldset>
+        <fieldset>
+            <legend>부가 입력</legend>
+            <div>
+                <label for="addreess">거주지</label>
+                <select name="addreess" id="addreess">
+                    <option value="서울시">서울시</option>
+                    <option value="경기도">경기도</option>
+                    <option value="강원도">강원도</option>
+                    <option value="제주도">제주도</option>
+                </select>
+            </div>
+            <div>
+                <span>방문경로: </span>
+                <label for="search">검색</label>
+                <input type="radio" name="referrer" id="search" value="검색">
+                <label for="recomend">지인</label>
+                <input type="radio" name="referrer" id="recomend" value="지인">
+                <label for="pager">신문광고</label>
+                <input type="radio" name="referrer" id="pager" value="신문광고">
+            </div>
+            <div>
+                <span>관심사항</span>
+                <label for="lang-html">HTML</label>
+                <input type="checkbox" name="interest" id="lang-html" value="HTML">
+                <label for="lang-css">css</label>
+                <input type="checkbox" name="interest" id="lang-css" value="CSS">
+                <label for="lang-jv">havascript</label>
+                <input type="checkbox" name="interest" id="lang-kv" value="javascript">
+            </div>
+            <p>
+                <span>인사말</span>
+                <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>HTML5 신속성</legend>
+            <div>
+                <label for="userbirth">생년월일</label>
+                <input type="date" id="userbirth">
+            </div>
+            <div>
+                <label for="usersearch">검색</label>
+                <input type="search" id="usersearch">
+            </div>
+            <div>
+                <label for="usertel">전화번호</label>
+                <input type="tel" id="usertel">
+                <!-- 모바일에서는 숫자탭이 올라옴. -->
+            </div>
+            <div>
+                <label for="userweb">홈페이지</label>
+                <input type="url" id="userweb">
+            </div>
+            <div>
+                <label for="usercareer">경력</label>
+                <input type="number" value="4" min="0" max="10" step="2" id="usercareer">
+            </div>
+            <div>
+                <label for="skill">숙련도</label>
+                <input type="range" id="skill" value="5" step="1" min="0" max="10">
+            </div>
+            <div>
+                <label for="color">색상</label>
+                <input type="color" id="color">
+            </div>
+            <div>
+                <label for="profile">프로필</label>
+                <input type="file" id="profile">
+            </div>
+            <div>
+                <label for="langs">배우고 싶은 언어</label>
+                <input name="langs" id="langs" list="mylist">
+                <datalist id="mylist">
+                    <option value="HTML"></option>
+                    <option value="CSS"></option>
+                    <option value="javascript"></option>
+                </datalist>
+                <!-- caniuse.com 새로운 속성들이 브라우저 별로 사용가능한지 확인가능. -->
+            </div>
+        </fieldset>
+        <!-- 
+            <div>
+                <input type="submit" value="전송">
+                <input type="reset" value="초기화">
+            </div> 
+        -->
+        <!-- 
+            <div>
+                <button type="submit">전송</button>
+                <button type="reset">초기화</button>
+            </div> 
+        -->
+        <!-- <input type="image" src="asdf"> -->
+        <button type="submit"><img src="asdf" alt="send"></button>
+    </form>
+</body>
+</html>
